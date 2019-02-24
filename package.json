@@ -1,0 +1,39 @@
+{
+  "name": "etecsa",
+  "version": "0.1.0",
+  "description": "Easier login for etecsa",
+  "bin": "./dist/cli.js",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsc --watch",
+    "prepare": "npm run build",
+    "prebuild": "rm -rf dist",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "Daniel Perez Alvarez <danielpza@protonmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cheerio": "^0.22.10",
+    "@types/got": "^9.3.0",
+    "@types/node": "^11.9.4",
+    "@types/tough-cookie": "^2.3.5",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "got": "^9.5.1",
+    "tough-cookie": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielpa9708/etecsa-login.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danielpa9708/etecsa-login/issues"
+  },
+  "homepage": "https://github.com/danielpa9708/etecsa-login#readme"
+}
