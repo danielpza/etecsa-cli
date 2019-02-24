@@ -35,6 +35,11 @@ export async function status() {
   }
 }
 
+export async function time() {
+  const { user } = await readConfig();
+  console.log(await api.getTime(user));
+}
+
 async function readConfig() {
   const file = await readFile(CONFIG_FILE);
   return JSON.parse(file.toString());

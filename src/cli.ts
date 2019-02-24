@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { login, logout, set, status } from "./index";
+import { login, logout, set, status, time } from "./index";
 
 const option = process.argv[2];
 
@@ -22,6 +22,9 @@ if (option === "logout") {
 if (option === "status") {
   status().catch(handleError);
 }
+if (option === "time") {
+  time().catch(handleError);
+}
 
 function handleError(err: Error) {
   console.error(err);
@@ -40,6 +43,7 @@ Usage
   - login
   - logout
   - status
+  - time
 
 Example
 
@@ -47,5 +51,7 @@ Example
   $ etecsa login
   $ etecsa status
   Connected
+  $ etecsa time
+  00:34:48
 `);
 }
