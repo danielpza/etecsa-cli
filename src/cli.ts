@@ -12,18 +12,18 @@ if (!option) {
 if (option === "set") {
   const [user, pass] = process.argv.slice(3);
   set(user, pass).catch(handleError);
-}
-if (option === "login") {
+} else if (option === "login") {
   login().catch(handleError);
-}
-if (option === "logout") {
+} else if (option === "logout") {
   logout().catch(handleError);
-}
-if (option === "status") {
+} else if (option === "status") {
   status().catch(handleError);
-}
-if (option === "time") {
+} else if (option === "time") {
   time().catch(handleError);
+} else {
+  console.error(`unknown command ${option}`);
+  showHelp();
+  process.exit(1);
 }
 
 function handleError(err: Error) {
