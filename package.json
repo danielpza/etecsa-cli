@@ -1,12 +1,12 @@
 {
-  "name": "etecsa",
+  "name": "etecsa-cli",
   "version": "0.1.0",
   "description": "Easier login for etecsa",
-  "bin": "./dist/cli.js",
+  "bin": {
+    "etecsa": "./dist/cli.js"
+  },
   "main": "./dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "start": "tsc --watch",
     "prepare": "npm run build",
@@ -30,10 +30,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danielpa9708/etecsa-login.git"
+    "url": "git+https://github.com/danielpza/etecsa-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/danielpa9708/etecsa-login/issues"
+    "url": "https://github.com/danielpza/etecsa-cli/issues"
   },
-  "homepage": "https://github.com/danielpa9708/etecsa-login#readme"
+  "homepage": "https://github.com/danielpza/etecsa-cli#readme"
 }
