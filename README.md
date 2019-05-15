@@ -14,5 +14,30 @@ npm i -g etecsa-cli
 ## Usage
 
 ```sh
-etecsa-cli --help
+$ etecsa command
+
+Usage
+
+  Command one of
+
+  - set user pass
+  - login
+  - logout
+  - status
+  - time
+
+Example
+
+  $ etecsa set myuser mypass
+  $ etecsa login
+  $ etecsa status
+  Connected
+  $ etecsa time
+  00:34:48
 ```
+
+Config is stored in ~/.etecsa.json
+
+## Gnome Integration
+
+[Etecsa Login Gnome Shell Extension](https://github.com/danielpza/etecsa-login-gnome-shell-extension)
