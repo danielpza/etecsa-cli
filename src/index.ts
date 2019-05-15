@@ -27,8 +27,7 @@ export async function set(user: string, pass: string) {
 }
 
 export async function status() {
-  const { uuid } = await readConfig();
-  if (uuid) {
+  if (await api.status()) {
     console.log("Connected");
   } else {
     console.log("Not Connected");

@@ -5,6 +5,7 @@ import { CookieJar } from "tough-cookie";
 
 const cookieJar = new CookieJar();
 
+const GOOGLE = "http://www.google.com";
 const ETECSA_LOGIN = "https://secure.etecsa.net:8443";
 const ETECSA_LOGIN_POST = "https://secure.etecsa.net:8443//LoginServlet";
 const ETECSA_LOGOUT = "https://secure.etecsa.net:8443/LogoutServlet";
@@ -29,6 +30,11 @@ export async function logout(ATTRIBUTE_UUID: string) {
   if (!body.match(/success/i)) {
     throw new Error("Error disconnecting");
   }
+}
+
+export async function status() {
+  const { body } = await got.get(GOOGLE);
+  return !body.match(ETECSA_LOGIN);
 }
 
 interface LoginParameters {
