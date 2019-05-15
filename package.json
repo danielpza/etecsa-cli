@@ -1,12 +1,14 @@
 {
   "name": "etecsa-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Easier login for etecsa",
   "bin": {
     "etecsa": "./dist/cli.js"
   },
   "main": "./dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "tsc --watch",
     "prepare": "npm run build",
