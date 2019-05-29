@@ -33,8 +33,12 @@ export async function logout(ATTRIBUTE_UUID: string) {
 }
 
 export async function status() {
-  const { body } = await got.get(GOOGLE);
-  return !body.match(ETECSA_LOGIN);
+  try {
+    const { body } = await got.get(GOOGLE);
+    return !body.match(ETECSA_LOGIN);
+  } catch {
+    return false;
+  }
 }
 
 interface LoginParameters {
