@@ -6,7 +6,10 @@ import { promisify } from "util";
 const readFile = promisify(readFileCb);
 const writeFile = promisify(writeFileCb);
 
-const CONFIG_FILE = resolve(process.env.HOME || "~/", ".etecsa.json");
+const configFile = resolve(
+  process.env.XDG_CONFIG_HOME || resolve(process.env.HOME || "~/", ".local"),
+  "etecsa.json"
+);
 
 export async function login() {
   const { user, pass } = await readConfig();
@@ -40,10 +43,10 @@ export async function time() {
 }
 
 async function readConfig() {
-  const file = await readFile(CONFIG_FILE);
+  const file = await readFile(configFile);
   return JSON.parse(file.toString());
 }
 
 async function writeConfig(config: any) {
-  await writeFile(CONFIG_FILE, JSON.stringify(config));
+  await writeFile(configFile, JSON.stringify(config));
 }
