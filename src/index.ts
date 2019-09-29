@@ -7,7 +7,7 @@ const readFile = promisify(readFileCb);
 const writeFile = promisify(writeFileCb);
 
 const configFile = resolve(
-  process.env.XDG_CONFIG_HOME || resolve(process.env.HOME || "~/", ".local"),
+  process.env.XDG_CACHE_HOME || resolve(process.env.HOME || "~/", ".cache"),
   "etecsa.json"
 );
 
