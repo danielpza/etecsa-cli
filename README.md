@@ -8,7 +8,9 @@ ETECSA login manager
 ## Install
 
 ```sh
-npm i -g etecsa-cli
+git clone https://github.com/danielpza/etecsa-cli.git
+cd etecsa-cli
+npm link
 ```
 
 ## Usage
