@@ -5,6 +5,11 @@
 
 ETECSA login manager
 
+## Requirements
+
+- npm
+- node
+
 ## Install
 
 ```sh
