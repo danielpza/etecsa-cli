@@ -63,7 +63,7 @@ async function getLoginParameters(): Promise<LoginParameters> {
   const $ = cheerio.load(loginResult.body);
   const result = $("form#formulario")
     .find("input")
-    .filter((_, el) => ["button", "reset"].indexOf($(el).attr("type")) === -1)
+    .filter((_, el) => ["button", "reset"].indexOf($(el).attr("type")!) === -1)
     .map((_, el) => ({ name: $(el).attr("name"), value: $(el).val() }))
     .get() as { name: string; value: string }[];
   const map = {} as any;
