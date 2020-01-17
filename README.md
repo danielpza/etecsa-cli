@@ -13,9 +13,7 @@ ETECSA login manager
 ## Install
 
 ```sh
-git clone https://github.com/danielpza/etecsa-cli.git
-cd etecsa-cli
-npm link
+npm i -g etecsa-cli
 ```
 
 ## Usage
@@ -43,7 +41,15 @@ Example
   00:34:48
 ```
 
-Config is stored in ~/.etecsa.json
+Config is stored in ~/.cache/.etecsa.json
+
+## Contributing
+
+```sh
+git clone https://github.com/danielpza/etecsa-cli.git
+cd etecsa-cli
+npm link
+```
 
 ## Gnome Integration
 
