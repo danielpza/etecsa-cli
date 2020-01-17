@@ -1,6 +1,6 @@
 {
   "name": "etecsa-cli",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Easier login for etecsa",
   "bin": {
     "etecsa": "./dist/cli.js"
