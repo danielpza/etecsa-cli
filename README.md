@@ -7,8 +7,7 @@ ETECSA login manager
 
 ## Requirements
 
-- npm
-- node
+- [node and npm](https://nodejs.org/en/)
 
 ## Install
 
