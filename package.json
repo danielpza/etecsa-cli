@@ -13,6 +13,7 @@
     "start": "tsc --watch",
     "prepare": "npm run build",
     "prebuild": "rm -rf dist",
+    "release": "standard-version",
     "build": "tsc"
   },
   "keywords": [],
@@ -23,6 +24,7 @@
     "@types/got": "^9.3.0",
     "@types/node": "^11.9.4",
     "@types/tough-cookie": "^2.3.5",
+    "standard-version": "^7.0.1",
     "typescript": "^3.2.2"
   },
   "dependencies": {
