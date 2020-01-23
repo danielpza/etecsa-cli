@@ -2,12 +2,13 @@ import * as api from "./core";
 import { resolve } from "path";
 import { readFile as readFileCb, writeFile as writeFileCb } from "fs";
 import { promisify } from "util";
+import { homedir } from "os";
 
 const readFile = promisify(readFileCb);
 const writeFile = promisify(writeFileCb);
 
 const configFile = resolve(
-  process.env.XDG_CACHE_HOME || resolve(process.env.HOME || "~/", ".cache"),
+  process.env.XDG_CACHE_HOME || resolve(homedir(), ".cache"),
   "etecsa.json"
 );
 
