@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "directories": "git+https://github.com/danielpza/directories-js.git",
     "got": "^9.5.1",
     "tough-cookie": "^3.0.1"
   },

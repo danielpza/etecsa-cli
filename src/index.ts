@@ -1,16 +1,14 @@
-import * as api from "./core";
-import { resolve } from "path";
+import { baseDirs } from "directories";
 import { readFile as readFileCb, writeFile as writeFileCb } from "fs";
-import { promisify } from "util";
 import { homedir } from "os";
+import { resolve } from "path";
+import { promisify } from "util";
+import * as api from "./core";
 
 const readFile = promisify(readFileCb);
 const writeFile = promisify(writeFileCb);
 
-const configFile = resolve(
-  process.env.XDG_CACHE_HOME || resolve(homedir(), ".cache"),
-  "etecsa.json"
-);
+const CONFIG_FILE = resolve(baseDirs.cache() || homedir(), "etecsa.json");
 
 export async function login() {
   const { user, pass } = await readConfig();
@@ -44,10 +42,10 @@ export async function time() {
 }
 
 async function readConfig() {
-  const file = await readFile(configFile);
+  const file = await readFile(CONFIG_FILE);
   return JSON.parse(file.toString());
 }
 
 async function writeConfig(config: any) {
-  await writeFile(configFile, JSON.stringify(config));
+  await writeFile(CONFIG_FILE, JSON.stringify(config));
 }
